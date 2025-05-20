@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  bot:
+    build: . 
+    container_name: parky_bot
+    restart: unless-stopped
+    env_file:
+      - /Users/stipochka/course_tg_bot/go_code/cmd/.env
+    volumes:
+      - ./session:/app/session 
+      - ./go_code/files:/app/files
